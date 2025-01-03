@@ -6,11 +6,12 @@ export default {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     "./nuxt.config.{js,ts}",
+    './content/**/*.{md,yml,json}',
     './app.vue',
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 

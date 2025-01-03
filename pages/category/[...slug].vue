@@ -29,7 +29,7 @@ xi<template>
           <p class="text-gray-600 mb-4">{{ tool.excerpt }}</p>
           <div class="flex justify-between">
             <nuxt-link
-              :to="`/article/${tool.id}`"
+              :to="`/articles/${tool.id}`"
               class="text-blue-600 hover:text-blue-800 font-medium"
             >
               Read More
@@ -86,7 +86,7 @@ onMounted(async () => {
     currentCategory.value = formatSlugToCategory(slug);
 
     try {
-      const response = await fetch("/dummy_articles.json");
+      const response = await fetch("/corrected_categorized_articles.json");
       articles.value = await response.json();
     } catch (error) {
       console.error("Failed to fetch articles:", error);

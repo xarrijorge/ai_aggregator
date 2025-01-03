@@ -101,11 +101,12 @@
   
   onMounted(async () => {
     const route = useRoute();
-    const id = parseInt(route?.params?.id, 10);
+    const id = route?.params?.id;
+    console.log(id)
   
     if (id) {
       try {
-        const response = await fetch("/dummy_articles.json");
+        const response = await fetch("/corrected_categorized_articles.json");
         const articles = await response.json();
         article.value = articles.find((a) => a.id === id);
   

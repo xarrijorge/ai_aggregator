@@ -11,7 +11,7 @@
         :key="tool.id"
         class="text-blue-500 hover:underline"
       >
-        <nuxt-link :to="`/article/${tool.id}`">{{ tool.title }}</nuxt-link>
+        <nuxt-link :to="`/articles/${tool.id}`">{{ tool.title }}</nuxt-link>
       </li>
     </ul>
     <!-- View More button -->

@@ -1,7 +1,7 @@
 <template>
     <div class="home bg-gray-100 min-h-screen py-8">
       <header class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-800">Nuxt Article Aggregator</h1>
+        <h1 class="text-4xl font-bold text-gray-800">AI Tools Aggregator</h1>
       </header>
   
       <!-- Category Grid -->
@@ -24,13 +24,15 @@
   
   // Predefined categories with fixed colors and slugs
   const categories = ref([
-    { name: "Productivity", color: "bg-red-500", slug: "productivity" },
-    { name: "Artificial Intelligence", color: "bg-blue-500", slug: "artificial-intelligence" },
-    { name: "Machine Learning", color: "bg-green-500", slug: "machine-learning" },
-    { name: "Software Tools", color: "bg-yellow-500", slug: "software-tools" },
-    { name: "Chatbots", color: "bg-purple-500", slug: "chatbots" },
-    { name: "Technology", color: "bg-pink-500", slug: "technology" },
-  ]);
+  { id: "chatbots", slug: "chatbots", name: "Chatbots", color: "bg-blue-500" },
+  { id: "ai-companions", slug: "ai-companions", name: "AI Companions", color: "bg-green-500" },
+  { id: "image-generation", slug: "image-generation", name: "Image Generation", color: "bg-red-500" },
+  { id: "voice-interaction", slug: "voice-interaction", name: "Voice Interaction", color: "bg-purple-500" },
+  { id: "roleplay-ai", slug: "roleplay-ai", name: "Roleplay AI", color: "bg-yellow-500" },
+  { id: "productivity-ai", slug: "productivity-ai", name: "Productivity AI", color: "bg-teal-500" },
+  { id: "anime-artwork-generation", slug: "anime-artwork-generation", name: "Anime & Artwork Generation", color: "bg-pink-500" },
+  { id: "privacy-focused-ai", slug: "privacy-focused-ai", name: "Privacy-Focused AI", color: "bg-gray-500" },
+]);
   
   // Articles fetched from JSON file
   const articles = ref([]);
@@ -44,7 +46,7 @@
   
   // Fetch articles on component mount
   onMounted(async () => {
-    const response = await fetch("/dummy_articles.json");
+    const response = await fetch("/corrected_categorized_articles.json");
     articles.value = await response.json();
   });
   </script>
